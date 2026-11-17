@@ -41,15 +41,21 @@
             flex-direction: column;
         }
 
-        /* Área da Imagem (Topo Rosa) */
+        /* Área da Imagem (Topo) */
         .card-header-image {
             width: 100%;
-            height: 250px;
-            background-color: #ff5c6c; /* Cor rosa/vermelha da imagem */
-            /* Se você tiver uma imagem real, use o código abaixo: */
-            /* background-image: url('sua-imagem.jpg'); */
-            /* background-size: cover; */
-            /* background-position: center; */
+            height: 250px; /* Altura padrão para desktop */
+            background-color: #ff5c6c; /* Cor de fundo caso a imagem não carregue */
+            position: relative;
+        }
+
+        /* Estilo da Imagem */
+        .card-header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+            object-position: center; /* Centraliza a imagem */
+            display: block;
         }
 
         /* Barra de Informações (Nome e Botões) */
@@ -139,7 +145,7 @@
         /* Responsividade para Celulares */
         @media (max-width: 600px) {
             .card-header-image {
-                height: 180px;
+                height: 180px; /* Reduz a altura da imagem no celular */
             }
 
             .card-info-bar {
@@ -174,8 +180,11 @@
 <body>
 
     <div class="card">
-        <!-- Parte Superior (Imagem) -->
-        <div class="card-header-image"></div>
+        <!-- Parte Superior (Imagem) - Referência do arquivo original -->
+        <div class="card-header-image">
+            <!-- Substitua o src abaixo pelo caminho real da sua imagem se necessário -->
+            <img src="assets/images/image01.jpg?v=a4bb0646" alt="HentaiHead Artwork" onerror="this.style.display='none'">
+        </div>
 
         <!-- Barra do Meio (Nome e Botões) -->
         <div class="card-info-bar">
